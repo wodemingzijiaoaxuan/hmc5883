@@ -11,7 +11,7 @@
 #ifndef __SENSOR_INTF_HMC5883_H__
 #define __SENSOR_INTF_HMC5883_H__
 
-#include "sensor.h"
+#include <rtdevice.h>
 #include "hmc5883.h"
 
 rt_err_t rt_hw_hmc5883_init(const char *name, struct rt_sensor_config *cfg);

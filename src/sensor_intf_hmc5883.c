@@ -12,6 +12,14 @@
 #include "hmc5883.h"
 #include <rtdbg.h>
 
+#if defined(RT_VERSION_CHECK)
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
+        #define RT_SIZE_TYPE   rt_ssize_t
+    #else
+        #define RT_SIZE_TYPE   rt_size_t
+    #endif
+#endif
+
 static struct hmc5883_device *mag_dev;
 
 static rt_err_t _hmc5883_init(struct rt_sensor_intf *intf)
@@ -106,7 +114,7 @@ static rt_size_t _hmc5883_polling_get_data(rt_sensor_t sensor, struct rt_sensor_
     return 1;
 }
 
-static rt_size_t _hmc5883_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE _hmc5883_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     RT_ASSERT(buf);
 

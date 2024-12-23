@@ -2,7 +2,7 @@
 #define __HMC5883_H__
 
 #include <rtthread.h>
-#include "sensor.h"
+#include <rtdevice.h>
 
 #define HMC5883_ADDR   0x1E  
 
@@ -18,14 +18,14 @@ enum hmc5883_cmd
 
 enum hmc5883_range
 {
-    HMC5883_RANGE_0_88Ga  = 0, // ¡À0.88G Gain:1370
-    HMC5883_RANGE_1_3Ga   = 1, // ¡À1.3G  Gain:1090
-    HMC5883_RANGE_1_9Ga   = 2, // ¡À1.9G  Gain:820
-    HMC5883_RANGE_2_5Ga   = 3, // ¡À2.5G  Gain:660
-    HMC5883_RANGE_4_0Ga   = 4, // ¡À4.0G  Gain:440
-    HMC5883_RANGE_4_7Ga   = 5, // ¡À4.7G  Gain:390
-    HMC5883_RANGE_5_6Ga   = 6, // ¡À5.6G  Gain:330
-    HMC5883_RANGE_8_1Ga   = 7  // ¡À8.1G  Gain:230
+    HMC5883_RANGE_0_88Ga  = 0, // ï¿½ï¿½0.88G Gain:1370
+    HMC5883_RANGE_1_3Ga   = 1, // ï¿½ï¿½1.3G  Gain:1090
+    HMC5883_RANGE_1_9Ga   = 2, // ï¿½ï¿½1.9G  Gain:820
+    HMC5883_RANGE_2_5Ga   = 3, // ï¿½ï¿½2.5G  Gain:660
+    HMC5883_RANGE_4_0Ga   = 4, // ï¿½ï¿½4.0G  Gain:440
+    HMC5883_RANGE_4_7Ga   = 5, // ï¿½ï¿½4.7G  Gain:390
+    HMC5883_RANGE_5_6Ga   = 6, // ï¿½ï¿½5.6G  Gain:330
+    HMC5883_RANGE_8_1Ga   = 7  // ï¿½ï¿½8.1G  Gain:230
 };
 
 enum hmc5883_odr
