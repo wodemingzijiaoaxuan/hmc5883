@@ -6,8 +6,10 @@ Import('rtconfig')
 src   = []
 cwd   = GetCurrentDir()
 
+if GetDepend('PKG_INTF_HMC5883_USING_SENSOR_V1'):
+    src += Glob('src/sensor_intf_hmc5883.c')
 # add hmc5883 src files.
-src += Glob('src/sensor_intf_hmc5883.c')
+
 src += Glob('src/hmc5883.c')
 
 # add hmc5883 include path.
